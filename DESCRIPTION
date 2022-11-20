@@ -1,7 +1,7 @@
 Package: geneset
 Type: Package
 Title: Get Gene Sets for Gene Enrichment Analysis
-Version: 0.2.6
+Version: 0.2.7
 Authors@R: 
     c(person(given = "Yunze",
              family = "Liu",
@@ -30,11 +30,11 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.6)
 Imports: dplyr, RCurl, fst, stringi, stringr
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.2
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2022-07-16 02:07:25 UTC; reedliu1
+Packaged: 2022-11-20 06:26:48 UTC; reedliu1
 Author: Yunze Liu [aut, cre] (<https://orcid.org/0000-0002-7414-8556>)
 Repository: CRAN
-Date/Publication: 2022-07-18 12:00:02 UTC
+Date/Publication: 2022-11-20 07:10:07 UTC

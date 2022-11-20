@@ -1,4 +1,4 @@
-08e51c4f71698782a77fb5b3cef582ca *DESCRIPTION
+3260768bf6602be5c44e91ef8b4fe30b *DESCRIPTION
 2e420b87ba9c164bc3e7abe1f8da769c *NAMESPACE
 2710ed9523deaaf290e149804c52fc3c *R/data.R
 ee143e847410600c51f148641058ed31 *R/getEnrichrdb.R
@@ -10,7 +10,7 @@ d821e20630f09a396b9275e530c27192 *R/getMsigdb.R
 f40a7aa3881576790aa26f2214831a89 *R/getReactome.R
 08d741cb2b05d93e1ff4da14167f8aec *R/getWiki.R
 fe60a300df5e43d0dd0f9ec5a5437a79 *R/utilities.R
-f5104da2f853aad3b77e0f29e67f1f79 *README.md
+6bcac9e96de686cac60d9a3cea5f47a1 *README.md
 13e86712bce473015264b9c3973c27c3 *data/enrichr_metadata.rda
 e63b4c6d7a592f73d8610512ad7ae4df *data/ensOrg_name.rda
 d20cfbf354f410a0488a332da4dfb905 *data/go_org.rda
@@ -26,7 +26,7 @@ de6a3060397b16f8f3bbfbd65498804c *man/Datasets.Rd
 468a53725ca2ddd8b1244de721187298 *man/getGO.Rd
 a4f7c43111ae59f4d49d47a03a9cb6bd *man/getHgDisease.Rd
 621134e80af47752b613bb10e137ef1e *man/getKEGG.Rd
-8eec53b13e796b24899cd7bade7b0e99 *man/getMesh.Rd
+df2ffae3cfa8cc9e52ddff0ae7c9d189 *man/getMesh.Rd
 9784686fae1431f107cdb05b2c676c67 *man/getMsigdb.Rd
 abffc358372a6b91c5cc073629ebd4ad *man/getReactome.Rd
 0ff80b945315a4e2d322d5b8795b0d93 *man/getWiki.Rd

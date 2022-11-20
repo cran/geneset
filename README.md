@@ -1,6 +1,6 @@
-# Genset
+# Geneset
 
-[![](https://img.shields.io/badge/devel%20version-0.2.4-green.svg)](https://github.com/GangLiLab/genekitr)  [![lifecycle](https://img.shields.io/badge/lifecycle-stable-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) 
+[![CRANstatus](https://www.r-pkg.org/badges/version/geneset)](https://cran.r-project.org/package=geneset) [![](https://img.shields.io/badge/devel%20version-0.2.6-green.svg)](https://github.com/GangLiLab/genekitr) [![](https://cranlogs.r-pkg.org/badges/grand-total/geneset?color=orange)](https://cran.r-project.org/package=geneset) [![lifecycle](https://img.shields.io/badge/lifecycle-stable-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) 
 
 ![Alt](https://repobeats.axiom.co/api/embed/1398fe8b05f49210229b9c8bca9b50a59337a7f7.svg "Repobeats analytics image")
 
@@ -39,7 +39,7 @@ We will follow a monthly-update frequency to make better user experience.
 
 ## 🛠 Installation
 
-#### (submitted to CRAN ...) Install stable version from CRAN:
+#### Install stable version from CRAN:
 
 ```
 install.packages("geneset")
@@ -58,6 +58,8 @@ remotes::install_git("https://gitee.com/genekitr/pacakge_geneset")
 ```
 
 ## 📚 Usage
+
+> For more details, please refer to [genekitr book](https://www.genekitr.fun/get-gene-sets-1.html).
 
 The package now includes eight functions: `getGO()`, `getKEGG()` , `getMesh()`, `getMsigdb()`, `getWiki()`, `getReactome()`, `getEnrichrdb()`, `getHgDisease()`
 
@@ -99,7 +101,49 @@ head(x$geneset_name)
 # GO:0000030                       mannosyltransferase activity
 ```
 
+##### How many terms/pathways in specific gene set?
 
+Take human KEGG Pathway as an example:
+
+```R
+gs <- geneset::getKEGG('hsa','pathway')
+gs_df <- gs$geneset
+table(gs_df$id) %>% length()
+# 347
+```
+
+##### Pass gene set to GSVA/ssGSEA
+
+```R
+library(GSVA)
+# firstly: turn gs to list
+gs_list <- split(gs_df$gene, gs_df$id)  
+
+# secondly: pass your expression dataset: "express_data" to gsva() function
+ssgsea_mat <- gsva(expr=express_data, 
+                 method="ssgsea", # "gsva"(default), "zscore", "plage"
+                 gset.idx.list=gs_list,  
+                 verbose=F, 
+                 parallel.sz = 4 )
+```
+
+##### Pass gene set to ORA/GSEA
+
+```R
+hg_gs <- geneset::getGO(org = "human",ont = "mf")
+# ORA
+go_ent <- genekitr::genORA(input_id, geneset = hg_gs)
+# GSEA (input is a pre-ranked gene list with logFC value)
+gse <- genGSEA(genelist = geneList, geneset = hg_gs)
+```
+
+
+
+## ✍️ Author
+
+[Yunze Liu](https://www.jieandze1314.com/)
+
+[![](https://img.shields.io/badge/follow%20me%20on-WeChat-orange.svg)](https://genekitr.online/img/bioinfoplanet.png)
 
 
 
